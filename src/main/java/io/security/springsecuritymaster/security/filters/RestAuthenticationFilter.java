@@ -23,12 +23,12 @@ import java.io.IOException;
 
 public class RestAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
     private final ObjectMapper objectMapper = new ObjectMapper();
-    public RestAuthenticationFilter(HttpSecurity http) {
+
+    public RestAuthenticationFilter() {
         super(new AntPathRequestMatcher("/api/login", "POST"));
-        setSecurityContextRepository(getSecurityContextRepository(http));
     }
 
-    private SecurityContextRepository getSecurityContextRepository(HttpSecurity http) {
+    public SecurityContextRepository getSecurityContextRepository(HttpSecurity http) {
         SecurityContextRepository securityContextRepository = http.getSharedObject(SecurityContextRepository.class);
         if (securityContextRepository == null) {
             securityContextRepository = new DelegatingSecurityContextRepository(
@@ -54,4 +54,6 @@ public class RestAuthenticationFilter extends AbstractAuthenticationProcessingFi
 
         return this.getAuthenticationManager().authenticate(token);
     }
+
+
 }

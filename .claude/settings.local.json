@@ -7,7 +7,11 @@
       "Bash(git commit:*)",
       "Bash(git checkout:*)",
       "Bash(git rm:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(cp /tmp/SecurityConfig_20.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/configs/SecurityConfig.java)",
+      "Bash(cp /tmp/RestAuthFilter_20.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/filters/RestAuthenticationFilter.java)",
+      "Bash(cp /tmp/RestFailureHandler_20.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/handler/RestAuthenticationFailureHandler.java)",
+      "Bash(cp /tmp/FormUserDetailsService_20.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/service/FormUserDetailsService.java)"
     ]
   }
 }
