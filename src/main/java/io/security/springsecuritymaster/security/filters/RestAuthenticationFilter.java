@@ -39,5 +39,4 @@ public class RestAuthenticationFilter extends AbstractAuthenticationProcessingFi
 
         return this.getAuthenticationManager().authenticate(token);
     }
-
 }
