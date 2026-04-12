@@ -17,7 +17,9 @@
       "Bash(cp /tmp/SecurityConfig_22.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/configs/SecurityConfig.java)",
       "Bash(cp /tmp/SetupDataLoader_22.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/listener/SetupDataLoader.java)",
       "Bash(cp /tmp/FormUserDetailsService_22.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/service/FormUserDetailsService.java)",
-      "Bash(cp /tmp/UserRepository_22.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/users/repository/UserRepository.java)"
+      "Bash(cp /tmp/UserRepository_22.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/users/repository/UserRepository.java)",
+      "Bash(cp /tmp/SetupDataLoader_23.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/security/listener/SetupDataLoader.java)",
+      "Bash(cp /tmp/UserRepository_23.java /Users/jeongdaeseob/workspace-intellij/spring-security-master/src/main/java/io/security/springsecuritymaster/users/repository/UserRepository.java)"
     ]
   }
 }
