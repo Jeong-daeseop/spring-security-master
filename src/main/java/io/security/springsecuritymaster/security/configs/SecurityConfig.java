@@ -35,6 +35,21 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
+        /*
+        http
+                .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user"). hasAuthority("USER") //엔드 포인트와 권한 설정, 요청이 /user 엔드포인트 요청인 경우 USER 권한을 필요로 한다
+                .requestMatchers( "/mypage/**")
+                .requestMatchers(RegexRequestMatcher.regexMatcher("/resource/[A-Za-z0-9]+")).hasAuthority("USER") //정규 표현식을 사용할 수 있다
+                .requestMatchers(HttpMethod.GET, "/**).hasAuthority("read") //HTTP METHOD 를 옵션으로 설정할 수 있다
+                .requestMatchers(HttpMethod.POST).hasAuthority("write") // POST 방식의 모든 엔드포인트 요청은 write 권한을 필요로 한다
+                .requestMatchers(new AntPathRequestMatcher("/manager/**"))
+                .requestMatchers("/admin/**")
+                .hasAuthority("USER") //Ant 패턴을 사용할 수 있다. 요청이 /mypage 또는 하위 경로인 경우 USER 권한을 필요로 한다
+                .hasAuthority("MANAGER") //원하는 RequestMatcher 를 직접 사용할 수 있다
+                .hasAnyAuthority("ADMIN","MANAGER") /admin/ 이하의 모든 요청은 ADMIN 과 MANAGER 권한을 필요로 한다
+                .anyRequest().authenticated()); 위에서 정의한 규칙 외 모든 엔드포인트 요청은 인증을 필요로 한다
+        */
         http
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().access(authorizationManager))

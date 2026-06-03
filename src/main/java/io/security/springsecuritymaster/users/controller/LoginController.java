@@ -44,7 +44,7 @@ public class LoginController {
     }
 
     @GetMapping(value="/denied")
-    public String accessDenied(@RequestParam(value = "exception", required = false) String exception, @AuthenticationPrincipal AccountDto accountDto, Model model) {
+    public String accessDenied(@RequestParam(value = "exception", required = false) String exception, @AuthenticationPrincipal(expression = "accountDto") AccountDto accountDto, Model model) {
 
         model.addAttribute("username", accountDto.getUsername());
         model.addAttribute("exception", exception);

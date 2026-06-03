@@ -85,10 +85,11 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
             AuthorityAuthorizationManager<RequestAuthorizationContext> authorizationManager = AuthorityAuthorizationManager.hasAuthority(role);
             authorizationManager.setRoleHierarchy(roleHierarchy);
             return authorizationManager;
-        }else{
+        } else {
             DefaultHttpSecurityExpressionHandler handler = new DefaultHttpSecurityExpressionHandler();
             handler.setRoleHierarchy(roleHierarchy);
-            WebExpressionAuthorizationManager authorizationManager = new WebExpressionAuthorizationManager(role);
+            String expression = role.replaceAll("(hasRole|hasAuthority)\\((?!')([^)]+)(?!')\\)", "$1('$2')");
+            WebExpressionAuthorizationManager authorizationManager = new WebExpressionAuthorizationManager(expression);
             authorizationManager.setExpressionHandler(handler);
             return authorizationManager;
         }

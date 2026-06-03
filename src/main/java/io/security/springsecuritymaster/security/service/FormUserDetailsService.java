@@ -6,7 +6,7 @@ import io.security.springsecuritymaster.domain.entity.Account;
 import io.security.springsecuritymaster.domain.entity.Role;
 import io.security.springsecuritymaster.users.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -37,8 +37,11 @@ public class FormUserDetailsService implements UserDetailsService {
                 .map(Role::getRoleName)
                 .collect(Collectors.toSet())
                 .stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-        ModelMapper mapper = new ModelMapper();
-        AccountDto accountDto = mapper.map(account, AccountDto.class);
+        AccountDto accountDto = AccountDto.builder()
+                .username(account.getUsername())
+                .age(account.getAge())
+                .password(account.getPassword())
+                .build();
 
         return new AccountContext(accountDto, authorities);
     }
